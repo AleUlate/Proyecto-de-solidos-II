@@ -41,4 +41,8 @@ plt.plot(x1, y1, color = "r") #qué es lo que grafica
 plt.scatter(o_prom, 0, color = 'g') #ubicar el centro C
 plt.xlabel('esfuerzo normal'); plt.ylabel('esfuerzo cortante') #nombre de ejes
 plt.axis('equal') #ejes a igual escala
+
+#anotaciones
+plt.annotate("o prom", (o_prom,0))
+plt,plt.annotate("o mín", (0,0), (o_min_a,0), arrowprops = dict())
 plt.show()
