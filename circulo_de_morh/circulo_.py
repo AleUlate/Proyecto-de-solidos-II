@@ -53,3 +53,5 @@ def plot(prom, R):
     plt.axis('off') #sin ejes
     plt.show()
 print(plot(o_prom, R))
+
+print("hola mundo")
