@@ -14,7 +14,7 @@ o_prom = (o_x + o_y)/2 #esfuerzo promedio
 R = t_max = m.sqrt(((o_x - o_y)/2)**2 + t_xy**2) #R and t_max
 t_xy2 = -(o_x - o_y)/2 * m.sin(2*a_radianes) + t_xy * m.cos(2*a_radianes)
 
-#cálculo de esfuerzos principales
+#cálculo de esfuerzos principales   
 def o_minn (prom, ang, t, ox, oy):
     if ang == 0:
         o_min = prom - m.sqrt(((ox - oy)/2)**2 + (t)**2)
@@ -31,7 +31,7 @@ def o_maxx (prom, ang, t, ox, oy):
         return o_max_a
 
 #grafica
-def plot(prom, R):
+def plot(prom, R, ox, oy):
     #graficar circulo
     plt.subplot(121)
     ang = np.linspace(0, 2 * np.pi,360) #para que grafique un circulo completo
@@ -44,16 +44,12 @@ def plot(prom, R):
     plt.axis('equal') #ejes a igual escala
     #anotaciones
     plt.annotate("o prom", (prom + 0.1 ,0.1))
-    plt.plot(np.linspace(o_minn(o_prom, a_radianes, t_xy, o_x, o_y), prom), np.linspace(0,0), color = 'c', ls = ':'); plt.annotate("o mín", (o_minn(o_prom, a_radianes, t_xy, o_x, o_y) + R/2 , 0.1), color = 'c')
-    plt.plot(np.linspace(o_maxx(o_prom, a_radianes, t_xy, o_x, o_y), prom), np.linspace(0,0), color = 'g', ls = ':'); plt.annotate("o máx", (o_maxx(o_prom, a_radianes, t_xy, o_x, o_y) - R/2 , 0.1), color = 'g')
-
+    plt.plot(np.linspace(o_minn(o_prom, a_radianes, t_xy, o_x, o_y), 0), np.linspace(0,0), color = 'c', ls = ':'); plt.annotate("o mín", (o_minn(o_prom, a_radianes, t_xy, o_x, o_y) + R/2 , 0.1), color = 'c')
+    plt.plot(np.linspace(o_maxx(o_prom, a_radianes, t_xy, o_x, o_y), 0), np.linspace(0,0), color = 'g', ls = ':'); plt.annotate("o máx", (o_maxx(o_prom, a_radianes, t_xy, o_x, o_y) - R/2 , 0.1), color = 'g')
+    plt.plot(np.linspace(oy, ox), np.linspace(t_xy,-t_xy), color = 'y', ls = '-'); #plt.annotate("o máx", (o_maxx(o_prom, a_radianes, t_xy, o_x, o_y) - R/2 , 0.1), color = 'y')
     #graficar cuadrado
     plt.subplot(122)
     p2 = plt.plot(x1 + 2, y1, color = 'b')
     plt.axis('off') #sin ejes
     plt.show()
-print(plot(o_prom, R))
-
-print("hola mundo")
-
-print( "Ejemplo ")
+print(plot(o_prom, R, o_x, o_y))
