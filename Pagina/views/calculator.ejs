@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Calculadora </title>
+    <style>
+        body {
+            padding-top: 3.5rem;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            min-width: 700;
+            background-color: #fffcf4;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' viewBox='0 0 192 192'%3E%3Cpath fill='%23ffcc33' fill-opacity='0.12' d='M192 15v2a11 11 0 0 0-11 11c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H145v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11 13 13 0 1 1 .02 26 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43a6.1 6.1 0 0 0-3.03 4.87V143h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 181 164a11 11 0 0 0 11 11v2a13 13 0 0 1-13-13 12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84a6.1 6.1 0 0 0-4.87-3.03H145v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 124 181a11 11 0 0 0-11 11h-2a13 13 0 0 1 13-13c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43a6.1 6.1 0 0 0 3.03-4.87V145h-35.02a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 107 124a11 11 0 0 0-22 0c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H49v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11A13 13 0 0 1 81 192h-2a11 11 0 0 0-11-11c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V145H11.98a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 0 1 0 177v-2a11 11 0 0 0 11-11c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H47v-35.02a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 28 109a13 13 0 1 1 0-26c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43A6.1 6.1 0 0 0 47 84.02V49H11.98a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 11 28 11 11 0 0 0 0 17v-2a13 13 0 0 1 13 13c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84A6.1 6.1 0 0 0 11.98 47H47V11.98a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 68 11 11 11 0 0 0 79 0h2a13 13 0 0 1-13 13 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43A6.1 6.1 0 0 0 49 11.98V47h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 85 68a11 11 0 0 0 22 0c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H143V11.98a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 124 13a13 13 0 0 1-13-13h2a11 11 0 0 0 11 11c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V47h35.02a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 179 28a13 13 0 0 1 13-13zM84.02 143a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 83 124a13 13 0 1 1 26 0c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84a6.1 6.1 0 0 0 4.87 3.03H143v-35.02a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 164 107a11 11 0 0 0 0-22c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V49h-35.02a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 1 1 83 68a12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84A6.1 6.1 0 0 0 84.02 49H49v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 28 85a11 11 0 0 0 0 22c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V143h35.02z'%3E%3C/path%3E%3C/svg%3E");
+        }
+        
+        canvas {
+            border: 1px solid blue;
+        }
+        
+        section {
+            min-width: 100;
+        }
+        
+        .nonCanvasComponents {
+            margin-top: 1px;
+            background-color: rgba(42, 82, 190, 1) !important;
+            color: white;
+            width: 30%;
+            float: left;
+        }
+        
+        .nonCanvasResults {
+            margin-top: 1px;
+            background-color: rgba(42, 82, 190, 1) !important;
+            color: white;
+            width: 25%;
+            float: left;
+            margin-left: 100px;
+        }
+        
+        .graph2 {
+            float: left;
+        }
+        
+        .graph1 {
+            float: right;
+        }
+        
+        .initialline {
+            display: block;
+            clear: both;
+            border-style: none none dotted;
+            color: #000000;
+        }
+        
+        .line {
+            display: block;
+            clear: both;
+            padding-top: 5px;
+            border-style: none none dotted;
+            color: #000000;
+        }
+        
+        .slider {
+            vertical-align: center;
+            float: left;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+        
+        table {
+            font-size: 12pt;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .nonCanvasComponents,
+        .graph2 {
+            margin-left: 10px;
+        }
+        
+        input[type=text] {
+            width: 100%;
+            margin: 1px 0;
+            box-sizing: border-box;
+            font-size: 12pt;
+            font-weight: bold;
+            font-family: "Times New Roman", Times, serif;
+            color: #665544;
+        }
+        
+        button {
+            font-size: 14pt;
+        }
+        
+        .blank_row {
+            height: 3px;
+        }
+        
+        .slider_range {
+            width: 160px;
+        }
+        
+        input[type=text] {
+            border: 1px solid darkorange;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        Transformación de esfuerzos mediante el Círculo de Mohr
+    </h2>
+    <hr class='initialline' />
+    <section class="nonCanvasComponents">
+        <fieldset>
+            <h3>Esfuerzos en MPa </h3>
+            <fieldset>
+                <table>
+                    <tr>
+                        <td>&sigma;<sub>x</sub></td>
+                        <td>=</td>
+                        <td> <input type="text" id="sigmax" value="0"> </input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&sigma;<sub>y</sub></td>
+                        <td>=</td>
+                        <td> <input type="text" id="sigmay" value="0"> </input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&tau;<sub>xy</sub></td>
+                        <td>=</td>
+                        <td> <input type="text" id="tauxy" value="0"> </input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"> <button id="bnCompute">Calcular</button> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"> <output id="opError"></output> </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </fieldset>
+    </section>
+    <section class="nonCanvasResults">
+        <fieldset>
+            <h3>Resultados</h3>
+            <fieldset>
+                <table>
+                    <tr>
+                        <td>&sigma;<sub>max</sub></td>
+                        <td> = </td>
+                        <td></td>
+                        <td> <output id="opSigma1"></output> </td>
+                    </tr>
+                    <tr>
+                        <td>&sigma;<sub>min</sub></td>
+                        <td> = </td>
+                        <td></td>
+                        <td> <output id="opSigma2"></output> </td>
+                    </tr>
+                    <tr>
+                        <td>&theta;<sub>p</sub></sub>
+                        </td>
+                        <td> = </td>
+                        <td></td>
+                        <td> <output id="opThetaSigma1"></output> </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>&theta;<sub>&sigma;<sub>2</sub></sub>
+                        </td>
+                        <td> = </td>
+                        <td></td>
+                        <td> <output id="opThetaSigma2"></output> </td>
+                    </tr> -->
+                    <tr class="blank_row">
+                        <td colspan=3> </td>
+                    </tr>
+                    <tr>
+                        <td>&tau;<sub>max</sub></td>
+                        <td> = </td>
+                        <td></td>
+                        <td> <output id="opTauMax"></output> </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </fieldset>
+    </section>
+    <section class="slider">
+        <table>
+            <tr>
+                <td colspan="3">
+                    Modifica el ángulo moviendo el slider
+                </td>
+            </tr>
+            <tr>
+                <td> Ángulo en grados: </td>
+                <td>
+                    <input type="range" id="raAngle" min=0 max=360.0 step="0.10" class="slider_range" value="0.0">
+                </td>
+                <td> <output id="opAngle">0.00</output>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <hr class='line' />
+    <section class="graph2">
+        <canvas width="800" height="500" id="canvasMohr">
+        </canvas>
+    </section>
+    <section class="graph1">
+        <canvas width="800" height="500" id="canvasTransform">
+        </canvas>
+    </section>
+</body>
+
+
+<script>
+    (function() {
+        var sigmax;
+        var sigmay;
+        var tauxy;
+        var sigma1;
+        var sigma2;
+        var tauMax;
+        var canvas01;
+        var context01;
+        var canvas02;
+        var context02;
+        var angle;
+        var sigmax1;
+        var sigmay1;
+        var taux1y1;
+        var angleDegrees;
+
+        window.onload = init;
+
+        function init() {
+            bnCompute.addEventListener('click', bnComputeClick, false);
+            raAngle.addEventListener('input', angleChange, false);
+
+            canvas01 = document.getElementById('canvasMohr');
+            context01 = canvas01.getContext('2d');
+
+            canvas02 = document.getElementById('canvasTransform');
+            context02 = canvas02.getContext('2d');
+
+            bnComputeClick();
+        }
+
+        function bnComputeClick() {
+            var sigmaxStr = document.getElementById('sigmax').value;
+            var sigmayStr = document.getElementById('sigmay').value;
+            var tauxyStr = document.getElementById('tauxy').value;
+
+            document.getElementById('raAngle').innerHTML = 0.0;
+
+            if (isNaN(sigmaxStr) || isNaN(sigmayStr) || isNaN(tauxyStr)) {
+                var errorMsg = 'Please enter only numeric values for stresses';
+                document.getElementById('opError').textContent = errorMsg;
+                document.getElementById('opSigma1').textContent = '';
+                document.getElementById('opSigma2').textContent = '';
+                document.getElementById('opTauMax').textContent = '';
+                document.getElementById('opThetaSigma1').textContent = '';
+                //document.getElementById('opThetaSigma2').textContent = '';
+
+                document.getElementById('sigmax').value = 0;
+                document.getElementById('sigmay').value = 0;
+                document.getElementById('tauxy').value = 0;
+            } else {
+                sigmax = parseFloat(sigmaxStr);
+                sigmay = parseFloat(sigmayStr);
+                tauxy = parseFloat(tauxyStr);
+
+                var res1 = (sigmax - sigmay) / 2.0;
+                var res2 = res1 * res1;
+                var res3 = Math.sqrt(res2 + tauxy * tauxy);
+
+                var res4 = (sigmax + sigmay) / 2.0;
+                sigma1 = res4 + res3;
+                sigma2 = res4 - res3;
+                tauMax = res3;
+
+                var sigma1Disp = sigma1.toFixed(4) + ' MPa';
+                var sigma2Disp = sigma2.toFixed(4) + ' MPa';
+                var tauMaxDisp = tauMax.toFixed(4) + ' MPa';
+                var cosTwoTheta = res1 / res3;
+                var sinTwoTheta = tauxy / res3;
+                var twoThetaSigma1 = Math.atan2(sinTwoTheta, cosTwoTheta);
+                var thetaSigma1 = twoThetaSigma1 * 0.5 * 180.0 / Math.PI; // pasar a grados
+                var thetaSigma2 = thetaSigma1 + 90;
+
+                var thetaSigma1Disp, thetaSigma2Disp;
+                if (Math.abs(res3) > 0.00001) {
+                    thetaSigma1Disp = thetaSigma1.toFixed(2) + ' grados';
+                    thetaSigma2Disp = thetaSigma2.toFixed(2) + ' grados';
+                } else {
+                    thetaSigma1Disp = 'Cualquier angulo';
+                    thetaSigma2Disp = 'Cualquier angulo';
+                }
+
+                document.getElementById('opSigma1').textContent = sigma1Disp;
+                document.getElementById('opSigma2').textContent = sigma2Disp;
+                document.getElementById('opTauMax').textContent = tauMaxDisp;
+                document.getElementById('opThetaSigma1').textContent = thetaSigma1Disp;
+                //document.getElementById('opThetaSigma2').textContent = thetaSigma2Disp;
+                document.getElementById('opError').textContent = '';
+
+                sigmax1 = sigmax;
+                sigmay1 = sigmay;
+                taux1y1 = tauxy;
+                angleDegrees = 0;
+                document.getElementById('raAngle').value = angleDegrees;
+                document.getElementById('opAngle').value = angleDegrees + ' grados';
+
+                drawMohrsCircle();
+                drawRotatingSquare();
+                computeSecondaryStresses(0.0);
+            }
+        }
+
+        // Graficos
+        function drawMohrsCircle() {
+            var yMargin = 10;
+            var rightMargin = 90;
+
+            var cWidth = canvas01.width;
+            var cHeight = canvas01.height;
+            var diameter = cHeight - 2 * yMargin;
+            var rightPoint = cWidth - rightMargin;
+            var leftPoint = rightPoint - diameter;
+
+            var centreX = (leftPoint + rightPoint) / 2;
+            var centreY = cHeight / 2;
+            var radius = diameter / 2;
+
+            context01.fillStyle = '#ffd154';
+            context01.fillRect(0, 0, cWidth, cHeight);
+
+            context01.save();
+
+            context01.beginPath();
+            context01.arc(centreX, centreY, radius, 0, 2 * Math.PI, false);
+            context01.fillStyle = 'cornsilk';
+            context01.fill();
+            context01.lineWidth = 2;
+            context01.strokeStyle = '#003300';
+            context01.arc(centreX, centreY, 2, 0, 2 * Math.PI, false);
+
+            var distance1;
+            var distance2;
+            var EPSILON = 0.0001;
+            if (Math.abs(sigma1 - sigma2) > EPSILON) {
+                distance1 = (sigmax - sigmay) * diameter / (sigma1 - sigma2);
+                distance2 = tauxy * diameter / (sigma1 - sigma2);
+            } else {
+                distance1 = diameter;
+                distance2 = 0;
+            }
+
+            var point1x = centreX + distance1 / 2;
+            var point1y = centreY + distance2;
+
+            var point2x = centreX - distance1 / 2;
+            var point2y = centreY - distance2;
+
+            context01.moveTo(point1x, point1y);
+            context01.lineTo(point2x, point2y);
+
+            context01.font = "10pt sans-serif";
+            context01.fillStyle = "#0d225c";
+            context01.textAlign = "left";
+            var text1 = 'A (' + sigmax.toFixed(2) + ', ' + tauxy.toFixed(2) + ')';
+            context01.fillText(text1, point1x + 5, point1y + 5);
+
+            context01.textAlign = 'right';
+            var minusTauxy = -tauxy;
+            var minusText = minusTauxy.toFixed(2);
+            text1 = 'B (' + sigmay.toFixed(2) + ', ' + minusText + ')';
+            context01.fillText(text1, point2x - 5, point2y + 5);
+
+            context01.moveTo(point1x, point1y);
+            context01.lineTo(point1x, centreY);
+
+            context01.moveTo(point2x, point2y);
+            context01.lineTo(point2x, centreY);
+            context01.stroke();
+
+            // calculos para dibujar el circulo
+            var distance3;
+            var distance4;
+            if (Math.abs(sigma1 - sigma2) > EPSILON) {
+                distance3 = (sigmax1 - sigmay1) * diameter / (sigma1 - sigma2);
+                distance4 = taux1y1 * diameter / (sigma1 - sigma2);
+            } else {
+                distance3 = diameter;
+                distance4 = 0;
+            }
+            var point3x = centreX + distance3 / 2;
+            var point3y = centreY + distance4;
+            var dynamicText = '';
+            var thetaText = ''
+
+            context01.beginPath();
+            context01.fillStyle = 'black';
+            context01.arc(point3x, point3y, 5, 0, 2 * Math.PI, true);
+            context01.fill();
+            // Eje X
+            context01.moveTo(10, cHeight / 2);
+            context01.lineTo(cWidth - 10, cHeight / 2);
+
+            // Eje Y
+            context01.moveTo(10, cHeight - 10);
+            context01.lineTo(10, cHeight - 150);
+
+            context01.font = "10pt sans-serif";
+            context01.fillStyle = 'black';
+            context01.textAlign = "right";
+            context01.fillText(dynamicText, canvas01.width - 10, 20);
+            context01.fillText(thetaText, canvas01.width - 10, 45);
+            context01.stroke();
+
+            drawArrow(context01, cWidth - 20, cHeight / 2, cWidth - 10, cHeight / 2);
+            drawArrow(context01, 10, cHeight - 100, 10, cHeight - 10);
+
+        
+
+            
+
+            drawStaticLabels(context01);
+            drawCentreOfCircle(context01, leftPoint, rightPoint);
+            drawSigma1And2(context01, leftPoint, rightPoint, sigma1, sigma2);
+
+            context01.restore();
+        }
+
+        // Draw the static labels on the top canvas - these are the x and y axes
+        function drawStaticLabels(context) {
+            context.save();
+            var xTextMargin1 = canvas01.width - 12;
+            context.beginPath();
+            context.font = "12pt sans-serif";
+            context.fillStyle = "#0d225c";
+            context.textAlign = "right";
+            context.fillText("\u03C3", xTextMargin1, canvas01.height / 2 - 10); // sigma
+            context.fillText("\u03C4", 30, canvas01.height - 20); // tau
+            context.stroke();
+            context.restore();
+        }
+
+        function drawArrow(context, fromx, fromy, tox, toy) {
+            context.save();
+            context.beginPath();
+            var headlen = 10; // tamaño de la punta en pixeles
+            var angle = Math.atan2(toy - fromy, tox - fromx);
+            context.moveTo(fromx, fromy);
+            context.lineTo(tox, toy);
+            context.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));
+            context.moveTo(tox, toy);
+            context.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
+            context.stroke();
+            context.restore();
+        }
+
+        // Centro del circulo
+        function drawCentreOfCircle(context, leftPointX, rightPointX) {
+            var centreX = (leftPointX + rightPointX) / 2;
+            context.save();
+            context.beginPath();
+            context.moveTo(centreX, canvas01.height / 2 - 7);
+            context.lineTo(centreX, canvas01.height / 2 + 7);
+
+            context.font = "10pt sans-serif";
+            context.fillStyle = "#0d225c";
+            context.textAlign = "left";
+            var sigmaCentre = (sigmax + sigmay) / 2;
+            var sigmaCentreDisp = sigmaCentre.toFixed(2);
+            var centreText = 'E (' + sigmaCentreDisp + ', 0' + ')';
+            context.fillText(centreText, centreX + 5, canvas01.height / 2 - 5);
+
+            context.stroke();
+            context.restore();
+        }
+
+        function drawSigma1And2(context, leftPointX, rightPointX, sigma1, sigma2) {
+            context.save();
+
+            context.beginPath();
+            context.font = "10pt sans-serif";
+            context.fillStyle = "#0d225c";
+            context.textAlign = "left";
+
+            var text1 = 'C (' + sigma1.toFixed(2) + ', 0' + ')';
+            context.fillText(text1, rightPointX + 3, canvas01.height / 2 + 15);
+
+            context.textAlign = "right";
+            var text2 = 'D (' + sigma2.toFixed(2) + ', 0' + ')';
+            context.fillText(text2, leftPointX - 5, canvas01.height / 2 + 15);
+            context.stroke();
+
+            context.restore();
+        }
+
+        // Cuadrado rotante
+        function drawRotatingSquare() {
+            var angleValue = document.getElementById('raAngle').value;
+            angle = parseFloat(angleValue);
+            angle = angle * Math.PI / 180.0;
+
+            context02.save();
+
+            var radius = 180;
+            var radiusShear = 182;
+            var x1, y1, x2, y2, x3, y4, x4, y4;
+            var centreX = 200;
+            var centreY = canvas02.height / 2;
+            x1 = centreX + radius * Math.cos(angle + Math.PI * 0.25);
+            y1 = centreY - radius * Math.sin(angle + Math.PI * 0.25);
+            x2 = centreX + radius * Math.cos(angle + Math.PI * 0.75);
+            y2 = centreY - radius * Math.sin(angle + Math.PI * 0.75);
+            x3 = centreX + radius * Math.cos(angle + Math.PI * 1.25);
+            y3 = centreY - radius * Math.sin(angle + Math.PI * 1.25);
+            x4 = centreX + radius * Math.cos(angle + Math.PI * 1.75);
+            y4 = centreY - radius * Math.sin(angle + Math.PI * 1.75);
+
+            context02.beginPath();
+            context02.fillStyle = '#ffd154';
+            context02.fillRect(0, 0, canvas02.width, canvas02.height);
+            context02.lineWidth = 2;
+            context02.moveTo(x1, y1);
+            context02.lineTo(x2, y2);
+            context02.lineTo(x3, y3);
+            context02.lineTo(x4, y4);
+            context02.lineTo(x1, y1);
+            context02.stroke();
+
+
+            var x5 = (x1 + x4) / 2;
+            var y5 = (y1 + y4) / 2;
+
+            var x6 = (3 * x5 - centreX) / 2;
+            var y6 = (3 * y5 - centreY) / 2;
+
+            context02.font = "14pt sans-serif";
+            context02.fillStyle = "#0d225c";
+            context02.textAlign = "left";
+
+            var x61 = x6;
+            var y61 = y6 + 15;
+            context02.fillText("\u03C3", x61, y61);
+            context02.fillText("max", x61 + 10, y61 + 6);
+
+            var x7 = (x1 + x2) / 2;
+            var y7 = (y1 + y2) / 2;
+
+            var x8 = (3 * x7 - centreX) / 2;
+            var y8 = (3 * y7 - centreY) / 2;
+            var x81 = x8;
+            var y81 = y8 + 15;
+            context02.fillText("\u03C3", x81, y81 - 30);
+            context02.fillText("min", x81 + 10, y81 - 24);
+
+            var x9 = (x3 + x2) / 2;
+            var y9 = (y3 + y2) / 2;
+
+            var x10 = (3 * x9 - centreX) / 2;
+            var y10 = (3 * y9 - centreY) / 2;
+
+            var x101 = x10;
+            var y101 = y10 + 15;
+            context02.fillText("\u03C3", x101, y101);
+            context02.fillText("max", x101 + 10, y101 + 6);
+
+            var x11 = (x3 + x4) / 2;
+            var y11 = (y3 + y4) / 2;
+
+            var x12 = (3 * x11 - centreX) / 2;
+            var y12 = (3 * y11 - centreY) / 2;
+
+            var x121 = x12;
+            var y121 = y12 + 15;
+            context02.fillText("\u03C3", x121, y121);
+            context02.fillText("min", x121 + 10, y121 + 6);
+
+
+            var x13 = centreX + radiusShear * Math.cos(angle + Math.PI * 0.29);
+            var y13 = centreY - radiusShear * Math.sin(angle + Math.PI * 0.29);
+            var x14 = centreX + radiusShear * Math.cos(angle + Math.PI * 0.71);
+            var y14 = centreY - radiusShear * Math.sin(angle + Math.PI * 0.71);
+
+            var x15 = centreX + radiusShear * Math.cos(angle + Math.PI * 0.79);
+            var y15 = centreY - radiusShear * Math.sin(angle + Math.PI * 0.79);
+            var x16 = centreX + radiusShear * Math.cos(angle + Math.PI * 1.21);
+            var y16 = centreY - radiusShear * Math.sin(angle + Math.PI * 1.21);
+
+            var x17 = centreX + radiusShear * Math.cos(angle + Math.PI * 1.29);
+            var y17 = centreY - radiusShear * Math.sin(angle + Math.PI * 1.29);
+            var x18 = centreX + radiusShear * Math.cos(angle + Math.PI * 1.71);
+            var y18 = centreY - radiusShear * Math.sin(angle + Math.PI * 1.71);
+
+            var x19 = centreX + radiusShear * Math.cos(angle + Math.PI * 1.79);
+            var y19 = centreY - radiusShear * Math.sin(angle + Math.PI * 1.79);
+            var x20 = centreX + radiusShear * Math.cos(angle + Math.PI * 0.21);
+            var y20 = centreY - radiusShear * Math.sin(angle + Math.PI * 0.21);
+
+            var x131 = x13 - 10;
+            var y131 = y13 - 10;
+
+            context02.beginPath();
+            context02.moveTo(x5, y5);
+            context02.lineTo(x6, y6);
+            context02.moveTo(x7, y7);
+            context02.lineTo(x8, y8);
+            context02.moveTo(x9, y9);
+            context02.lineTo(x10, y10);
+            context02.moveTo(x11, y11);
+            context02.lineTo(x12, y12);
+
+            context02.stroke();
+
+
+            // Ejes
+            var lengthOfSegment = 30;
+            context02.beginPath();
+            context02.strokeStyle = "#00ff00";
+            context02.moveTo(centreX, centreY);
+            context02.lineTo(centreX + lengthOfSegment, centreY);
+            context02.moveTo(centreX, centreY - lengthOfSegment);
+            context02.lineTo(centreX, centreY);
+            context02.stroke();
+
+            var x30 = centreX;
+            var y30 = centreY;
+            var x31 = centreX + lengthOfSegment;
+            var y31 = centreY;
+            var x32 = centreX;
+            var y32 = centreY;
+            var x33 = centreX;
+            var y33 = centreY - lengthOfSegment;
+
+            drawArrow(context02, x30, y30, x31, y31);
+            drawArrow(context02, x32, y32, x33, y33);
+
+            context02.font = "12pt sans-serif";
+            context02.fillStyle = "#0d225c";
+            context02.strokeStyle = "#000000";
+            context02.textAlign = "left";
+
+            context02.fillText('x', centreX - 10 + lengthOfSegment, centreY + 10);
+            context02.fillText('y', centreX - 10, centreY - lengthOfSegment + 10);
+
+            // Ejes rotantes
+            var x56 = centreX + lengthOfSegment * Math.cos(angle);
+            var y56 = centreY - lengthOfSegment * Math.sin(angle);
+            var x78 = centreX + lengthOfSegment * Math.cos(angle + 1.57);
+            var y78 = centreY - lengthOfSegment * Math.sin(angle + 1.57);
+
+            context02.beginPath();
+            context02.moveTo(centreX, centreY);
+            context02.lineTo(x56, y56);
+            context02.moveTo(centreX, centreY);
+            context02.lineTo(x78, y78);
+            context02.stroke();
+
+            drawArrow(context02, centreX, centreY, x56, y56);
+            drawArrow(context02, centreX, centreY, x78, y78);
+
+            context02.font = "12pt sans-serif";
+            context02.fillStyle = "#0d225c";
+            context02.textAlign = "left";
+            context02.fillText("x'", x56, y56 + 10);
+            context02.fillText("y'", x78, y78 + 10);
+
+            context02.restore();
+
+            drawSecondaryStressesText(context02);
+        }
+
+        function drawSecondaryStressesText(context) {
+            context.save();
+            var xTextMargin1 = canvas02.width - 160;
+            context.beginPath();
+            context.font = "13pt sans-serif";
+            context.fillStyle = "#0d225c";
+            context.textAlign = "left";
+
+            context.fillText("\u03B8", xTextMargin1, 25);
+            var text1 = ' = ' + angleDegrees + ' grados';
+            context.fillText(text1, xTextMargin1 + 25, 25);
+
+            context.fillText("\u03C3", xTextMargin1, 60);
+            context.fillText("max", xTextMargin1 + 10, 66);
+            var text1 = '    = ' + sigmax1.toFixed(2) + ' MPa';
+            context.fillText(text1, xTextMargin1 + 25, 60);
+
+            context.fillText("\u03C3", xTextMargin1, 95);
+            context.fillText("min", xTextMargin1 + 10, 101);
+            text1 = '    = ' + sigmay1.toFixed(2) + ' MPa';
+            context.fillText(text1, xTextMargin1 + 25, 95);
+
+            context.stroke();
+            context.restore();
+        }
+
+        // Input de slider de angulos
+        function computeSecondaryStresses(angle) {
+            var angleRadians = angle * Math.PI / 180.0;
+            var sinVal = Math.sin(2.0 * angleRadians);
+            var cosVal = Math.cos(2.0 * angleRadians);
+            var term1 = (sigmax + sigmay) * 0.5;
+            var term2 = (sigmax - sigmay) * 0.5 * cosVal;
+            var term3 = tauxy * sinVal;
+            sigmax1 = term1 + term2 + term3;
+            sigmay1 = term1 - term2 - term3;
+            var term4 = (sigmax - sigmay) * 0.5 * sinVal;
+            var term5 = tauxy * cosVal;
+            taux1y1 = -term4 + term5;
+        }
+
+        // Handler para el evento de cambiar angulo
+        function angleChange() {
+            var angleValue = document.getElementById('raAngle').value;
+            var angl = parseFloat(angleValue);
+            var angl2 = angl.toFixed(2);
+            angleDegrees = angl2;
+            document.getElementById('opAngle').textContent = angl2 + ' grados';
+
+            computeSecondaryStresses(angl);
+            drawRotatingSquare();
+            drawMohrsCircle();
+        }
+    }());
+</script>
+
+</html>

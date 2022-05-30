@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('layouts/head'); %>
+
+        <!-- Home Specific Tags -->
+        <meta name="description" content="Express, MongoDB, and Node.js template stylized with Bootstrap.">
+        <link rel="canonical" href="https://starter-node-express-bootstrap.herokuapp.com/" />
+
+        <title>Mecanica de solidos</title>
+</head>
+
+<body>
+    <%- include('layouts/navbar'); %>
+
+        <main>
+            <!-- Main Section -->
+            <section id="hero">
+                <div class="container py-4 py-md-5">
+                    <div class="row align-items-center py-5">
+                        <div class="col-md-7">
+                            <h1 class="display-3 fw-bold"><i class="fa fa-splotch"></i> Transformación de esfuerzos mediante el Círculo de Mohr</h1>
+                            <p class="mb-0">
+                                <button type="button" class="btn-pill btn-lg btn-primary me-3" onclick="redirectToCalculator()">
+                                Calcular Circulo de Mohr
+                            </button>
+                                <a class="btn-pill btn-lg btn-info" href="#about">Más sobre nuestro proyecto</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Section -->
+            <section id="about" class="bg-info text-light">
+                <div class="container py-4 py-md-5">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2>¿Qué es el círculo de Mohr y qué funcionalidad tiene?</h2>
+                            <p>
+                                En prismas mecánicos, como una viga o una columna, existen cargas o esfuerzos internos, que se encargan de mantener la estructura en equilibrio de cargas. Es por esto que se ven aplicadas los esfuerzos cortantes, que son fuerzas internas resultantes de
+                                las tensiones paralelas a través de una sección transversal. De igual manera, el esfuerzo resultante de las tensiones perpendiculares a dicha sección es el esfuerzo normal, que se encarga, ya sea, de tensionar o comprimir
+                                la estructura a lo largo de su eje vertical. Para la determinación de estos esfuerzos máximos y mínimos, existen diversos métodos, uno de ellos es el Círculo de Mohr, planteado por el ingeniero alemán Otto Mohr (1835-1918),
+                                y se conoce como un círculo que ilustra las relaciones que existen entre los momentos y productos de inercia de un área dada respecto a ejes que pasan por un punto fijo O. Este método consiste en graficar un círculo donde
+                                se exponen los esfuerzos principales que sufre el prisma mecánico en estudio, partiendo de las propiedades geométricas, como el radio y centro de una circunferencia. (Johnston y Beer, 2010).
+                            </p><br>
+                            <h3>
+                                Asimismo, el Círculo de Mohr se aplica en diversos temas, como:
+                            </h3>
+                            <ul>
+                                <li>
+                                    Momento de inercia.
+                                </li>
+                                <li>
+                                    Tensiones.
+                                </li>
+                                <li>
+                                    Esfuerzo cortante máximo absoluto.
+                                </li>
+                                <li>
+                                    Deformación máxima absoluta.
+                                </li>
+                                <li>
+                                    Geotecnia.
+                                </li>
+                                <li>
+                                    Diseño de ejes sujetos a esfuerzos de flexión y cortante combinadas.
+                                </li>
+                                <li>
+                                    Sistemas magmáticos.
+                                </li>
+                                <li>
+                                    Cohesión.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- Information Section -->
+            <section id="information">
+                <div class="container py-4 py-md-5">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h1>
+                                Construcción del círculo de Mohr
+                            </h1>
+                            <h2>
+                                1-Identificar los valores de los esfuerzos normales y el cortante.
+                            </h2>
+                            <p>
+                                Para un elemento infinitesimal de un componente estructural, es necesario determinar el estado de esfuerzo en el que se encuentra, es decir, los valores de cortante y de esfuerzo normal en el eje x y y, para poder determinar cuáles serían las condiciones
+                                de esfuerzos principales y la cortante máxima. Como se observa en la figura 1, los vectores que se encuentran perpendiculares a las caras del cuadrado son los esfuerzos normales, donde σx es el esfuerzo normal en el eje
+                                x y σy es el esfuerzo normal en el eje y. Los vectores paralelos a las caras del cuadrado son los esfuerzos cortantes τxy, donde el primer subíndice indica sobre cuál eje se trabaja perpendicularmente y el segundo subíndice
+                                indica la dirección del componente; sin embargo, el esfuerzo cortante que se aplique sobre el eje x será el mismo que se aplique en el eje y, por ende, τxy y τyx son lo mismo.
+                            </p>
+                            <div>
+                                <figure>
+                                    <h1>
+                                        <img src="/assets/Imagen1.png" alt="Fig 1">
+                                    </h1>
+                                    <figcaption>Figura 1. Elemento infinitesimal de un componente estructural sometido a esfuerzos normales σ y cortantes τ. Fuente: Orozco, 2019.
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <h2>
+                                2-Localización de los puntos A y B, y punto centro.
+                            </h2>
+                            <p>
+                                Existe una relación entre los esfuerzos normales y el cortante. Si se plantea un eje de coordenadas, donde el eje de las abscisas representa el esfuerzo normal, y el eje ordenado el cortante, y se grafican dos puntos, donde uno de ellos representa el
+                                esfuerzo en el plano x (punto A), utilizando el σx y τyx, y el otro punto representa el esfuerzo en el plano y (punto B), empleando el σy y -τyx, se obtiene el diámetro del círculo si se traza una línea de un punto al otro.
+                                Otra forma de obtener este diámetro de forma algebraica es mediante la siguiente ecuación:
+                            </p>
+                            <h1>
+                                <img src="/assets/Imagen2.png" alt="Fig 2">
+                            </h1>
+                            <h1>
+                                <img src="/assets/Imagen3.png" alt="Fig 3">
+                            </h1>
+                            <p>
+                                Figura 2. Gráfica generada según el método de Círculo de Mohr. Fuente: Orozco, 2019.
+                            </p>
+                            <p>
+                                Siguiendo la figura 2, para determinar el centro del círculo, se emplea la siguiente ecuación, que representa tanto el centro del círculo como el esfuerzo normal promedio, y se grafica siguiendo el par ordenado (σprom, 0):
+                            </p>
+                            <h1>
+                                <img src="/assets/Imagen4.png" alt="Fig 4">
+                            </h1>
+
+                            <h2>
+                                3-Cálculo de los esfuerzos normales principales.
+                            </h2>
+                            <p>
+                                A partir de lo obtenido en los puntos anteriores, es que se puede graficar la circunferencia y con ellos se logra obtener los esfuerzos máximos σmax y mínimos σmin (esfuerzos principales); sin embargo, la forma algebraica de calcularlos es la siguiente:
+                            </p>
+                            <h1>
+                                <img src="/assets/Imagen5.png" alt="Fig 5">
+                            </h1>
+                            <p>
+                                Asimismo, para el cálculo del cortante máximo se emplea la misma ecuación para determinar el radio del círculo.
+                            </p>
+
+                            <h2>
+                                4-Dirección de los esfuerzos normales.
+                            </h2>
+                            <p>
+                                Partiendo de los esfuerzos principales y el cortante máximo determinado en el inciso anterior, se puede volver a graficar la figura 1, pero con una rotación sobre su eje, para obtener la dirección de los esfuerzos principales. Esta rotación depende de
+                                la amplitud y dirección del ángulo θp, y se calcula de la siguiente forma:
+                            </p>
+                            <h1>
+                                <img src="/assets/Imagen6.png" alt="Fig 6">
+                            </h1>
+                            <p>
+                                La rotación ya aplicada se observa en la figura 3. El ángulo 2θp es el que se genera desde el eje de las abscisas hasta tocar la línea que representa el diámetro del círculo, como se ve en la figura 2.
+                            </p>
+                            <h1>
+                                <img src="/assets/Imagen7.png" alt="Fig 7">
+                            </h1>
+                            <p>
+                                Figura 3. Dirección de rotación de los esfuerzos normales y cortantes principales. Fuente: Johnston y Beer, 2010.
+                            </p>
+                            <p>
+                                Para comprobar que el cálculo de ángulos haya sido la correcta, se debe realizar la suma de ángulos y el valor que debe resultar en un ángulo de 45°.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Refs Section -->
+            <section id="refs" class="bg-info text-light">
+                <div class="container py-4 py-md-5">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2>Referencias</h2>
+                            <p>
+                                <br> Johnston, R. y Beer, F. (2010). Mecánica Vectorial para ingenieros, novena edición. Ciudad de México, México: Mc Graw Hill. <br> Orozco, J. (2019). ¿Cómo calcular esfuerzos a partir de círculos de Mohr? De Toolengy.
+                                Recuperado de: https://www.toolengy.com/publicaciones/como-se-hace/circulos-mohr
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script>
+                function redirectToCalculator() {
+                    location.replace("http://localhost:8080/calculator")
+                }
+            </script>
+        </main>
+
+        <%- include('layouts/footer'); %>
+
+            <!-- Bundled JS: Bootstrap, jQuery, Lodash -->
+            <script src="/scripts/bundle.js"></script>
+
+            <!-- Custom JavaScript -->
+</body>
+
+</html>
