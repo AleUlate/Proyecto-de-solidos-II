@@ -1,4 +1,4 @@
-# Proyecto-de-s-lidos-II
+# Proyecto-de-solidos-II
 A partir de los esfuerzos como datos de entrada, el código es capaz de calcular los esfuerzos principales y cortante máximo, además de la dirección de los mismos, y con ello, graficar el círculo de Mohr.
 
 Autores:
